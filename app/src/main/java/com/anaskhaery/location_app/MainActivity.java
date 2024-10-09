@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity implements AirLocation.Callb
             return insets;
         });
 
+        String selectedCar = getIntent().getStringExtra("selected car");
+        String selectedGas = getIntent().getStringExtra("selected gas");
+        //Toast.makeText(this, selectedCar + selectedGas, Toast.LENGTH_SHORT).show();
 
         locationContainer = findViewById(R.id.locationContainer);
         distanceText = findViewById(R.id.distanceText);
