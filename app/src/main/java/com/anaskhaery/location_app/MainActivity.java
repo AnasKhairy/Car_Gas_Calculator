@@ -95,6 +95,10 @@ public class MainActivity extends AppCompatActivity implements AirLocation.Callb
 
             @Override
             public void afterTextChanged(Editable s) {
+                // function --> String "s"
+                // isLocationButtonClicked=false;
+                // airLocation.start
+                // all in background Thread
             }
         });
 
