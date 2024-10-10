@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.anaskhaery.location_app'
+    namespace 'com.anaskhaery.Car_Gas_Calculator'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.anaskhaery.location_app"
+        applicationId "com.anaskhaery.Car_Gas_Calculator"
         minSdk 21
         targetSdk 34
         versionCode 1

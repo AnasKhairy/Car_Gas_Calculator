@@ -1,6 +1,4 @@
-package com.anaskhaery.location_app;
-
-import static androidx.core.location.LocationManagerCompat.getCurrentLocation;
+package com.anaskhaery.Car_Gas_Calculator;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -26,6 +24,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.anaskhaery.Car_Gas_Calculator.R;
 
 import java.io.IOException;
 import java.util.ArrayList;

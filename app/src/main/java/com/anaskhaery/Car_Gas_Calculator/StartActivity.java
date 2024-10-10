@@ -1,4 +1,4 @@
-package com.anaskhaery.location_app;
+package com.anaskhaery.Car_Gas_Calculator;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,9 +13,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.anaskhaery.Car_Gas_Calculator.R;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class StartActivity extends AppCompatActivity {
 

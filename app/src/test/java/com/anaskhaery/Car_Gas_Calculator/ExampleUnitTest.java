@@ -1,4 +1,4 @@
-package com.anaskhaery.location_app;
+package com.anaskhaery.Car_Gas_Calculator;
 
 import org.junit.Test;
 

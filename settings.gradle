@@ -20,5 +20,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Location_App"
+rootProject.name = "Car_Gas_Calculator"
 include ':app'
