@@ -48,8 +48,10 @@
         android:text="Get Current location"
         app:layout_constraintBottom_toBottomOf="@+id/button"
         app:layout_constraintEnd_toStartOf="@+id/clearButton"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/clearButton" />
+        app:layout_constraintTop_toTopOf="@+id/clearButton"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ScrollView
         android:layout_width="0dp"

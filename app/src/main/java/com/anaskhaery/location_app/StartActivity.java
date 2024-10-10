@@ -38,8 +38,8 @@ public class StartActivity extends AppCompatActivity {
 
         cars.clear();
         gass.clear();
-        Collections.addAll(cars, "Please, select your car", "car1", "car2", "car3");
-        Collections.addAll(gass, "Please, select your car's fuel type", "80", "90", "95", "solar", "gas");
+        Collections.addAll(cars, "Please, select your car", "Toyota", "BMW", "Hyundai", "Mercedes");
+        Collections.addAll(gass, "Please, select your car's fuel type", "80", "90", "92", "95", "solar", "gas");
 
         //carList>>adapter>>spinner
         ArrayAdapter carsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cars);
