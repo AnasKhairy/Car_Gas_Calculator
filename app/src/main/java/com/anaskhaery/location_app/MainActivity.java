@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements AirLocation.Callb
     private AirLocation airLocation;
     private Geocoder geocoder;
     private boolean isLocationButtonClicked = false;
-    private double lat, lon;
+    private double lat, lon,fuelConsumptionPerKm,fuelPricePerLiter;
 
 
     @Override
@@ -61,6 +61,59 @@ public class MainActivity extends AppCompatActivity implements AirLocation.Callb
         String selectedCar = getIntent().getStringExtra("selected car");
         String selectedGas = getIntent().getStringExtra("selected gas");
         //Toast.makeText(this, selectedCar + selectedGas, Toast.LENGTH_SHORT).show();
+
+
+// Variables to store the fuel consumption and fuel price
+        fuelConsumptionPerKm = 0.0; // Fuel consumption in liters per km
+        fuelPricePerLiter = 0.0;    // Fuel price in EGP per liter
+
+// Logic for setting fuel price based on selected gas type
+        if (selectedGas != null) {
+            switch (selectedGas) {
+                case "80":
+                    fuelPricePerLiter = 12.25;
+                    break;
+                case "90":
+                    fuelPricePerLiter = 13.75;
+                    break;
+                case "92":
+                    fuelPricePerLiter = 15.00;
+                    break;
+                case "95":
+                    fuelPricePerLiter = 17.00; // Example value for gas 95
+                    break;
+                case "solar":
+                    fuelPricePerLiter = 11.50;
+                    break;
+                case "gas":
+                    fuelPricePerLiter = 3.75;
+                    break;
+                default:
+                    fuelPricePerLiter = 0.0; // Default value in case gas type is not recognized
+                    break;
+            }
+        }
+
+// Logic for setting fuel consumption based on selected car type
+        if (selectedCar != null) {
+            switch (selectedCar) {
+                case "Toyota":
+                    fuelConsumptionPerKm = 5.9 / 100; // 5.9 L/100km
+                    break;
+                case "Hyundai":
+                    fuelConsumptionPerKm = 6.5 / 100; // Example: 6.5 L/100km for Honda
+                    break;
+                case "BMW":
+                    fuelConsumptionPerKm = 8.0 / 100; // Example: 8.0 L/100km for BMW
+                    break;
+                case "Mercedes":
+                    fuelConsumptionPerKm = 12.0 / 100; // Example: 12.0 L/100km for BMW
+                    break;
+                default:
+                    fuelConsumptionPerKm = 0.0; // Default in case car type is not recognized
+                    break;
+            }
+        }
 
         locationContainer = findViewById(R.id.locationContainer);
         distanceText = findViewById(R.id.distanceText);
@@ -110,7 +163,7 @@ public class MainActivity extends AppCompatActivity implements AirLocation.Callb
     }
 
     public void calculate(View view) {
-        isLocationButtonClicked=false;
+        isLocationButtonClicked = false;
         airLocation.start();
     }
 
@@ -172,7 +225,7 @@ public class MainActivity extends AppCompatActivity implements AirLocation.Callb
     }
 
     public void getCurrentLocationButtonClicked(View view) {
-        isLocationButtonClicked=true;
+        isLocationButtonClicked = true;
         airLocation.start();
     }
 
@@ -262,6 +315,7 @@ public class MainActivity extends AppCompatActivity implements AirLocation.Callb
         }
         return optimalRoute;
     }
+
     private String calculateRoute(List<LocationCoordinate> route) {
         StringBuilder result = new StringBuilder();
         double totalCost = 0;
@@ -273,7 +327,9 @@ public class MainActivity extends AppCompatActivity implements AirLocation.Callb
             // Calculate distance between locations
             float distance = calculateDistance(loc1, loc2);
             // Estimate fuel cost (example: fuel consumption rate of 8 liters per 100 km and fuel cost of 15 EGP per liter)
-            double fuelCost = (distance * 0.08) * 15; // 0.08 is liters/km, 15 is cost per liter in EGP
+//            double fuelCost = (distance * 0.08) * 15; // 0.08 is liters/km, 15 is cost per liter in EGP
+            double fuelCost = (distance * fuelConsumptionPerKm) * fuelPricePerLiter;
+//            System.out.println(fuelConsumptionPerKm+" "+fuelPricePerLiter+"");
             totalCost += fuelCost;
             // Append details for this leg of the journey
             result.append(String.format("Distance between %s and %s: %.2f km\n", loc1.getName(), loc2.getName(), distance));
