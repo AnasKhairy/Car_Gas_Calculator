@@ -145,6 +145,8 @@ public class MainActivity extends AppCompatActivity implements AirLocation.Callb
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (!s.toString().trim().isEmpty() &&
                         locationEditTexts.indexOf(newEditText) == locationEditTexts.size() - 1) {
+                    //list add text
+                    //nested loop list
                     addNewLocationEditText();
                 }
             }

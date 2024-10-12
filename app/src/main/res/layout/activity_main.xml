@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:paddingBottom="50dp"
     tools:context=".MainActivity"
-    android:background="@drawable/car_fuel_background">
+    >
 
     <Button
         android:id="@+id/button"
