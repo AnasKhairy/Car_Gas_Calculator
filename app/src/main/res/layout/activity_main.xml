@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="50dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/car_fuel_background">
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="#2196F3"
+        android:fontFamily="@font/alfa_slab_one"
         android:onClick="calculate"
-        android:text="Calculate"
+        android:text="@string/calculate"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -22,9 +27,13 @@
         android:id="@+id/clearButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#F44336"
+        android:fontFamily="@font/alfa_slab_one"
+        android:foregroundGravity="right"
         android:onClick="clear"
-        android:text="Clear"
+        android:text="@string/clear"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -42,10 +51,15 @@
 
     <Button
         android:id="@+id/btnGetLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="184dp"
+        android:layout_height="46dp"
+        android:backgroundTint="#4CAF50"
+        android:fontFamily="@font/alfa_slab_one"
+        android:foregroundGravity="center"
+        android:gravity="center"
         android:onClick="getCurrentLocationButtonClicked"
-        android:text="Get Current location"
+        android:text="@string/get_my_location"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/button"
         app:layout_constraintEnd_toStartOf="@+id/clearButton"
         app:layout_constraintHorizontal_bias="1.0"

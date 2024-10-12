@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Location_App</string>
+    <string name="app_name">Car Gas Calculator</string>
+    <string name="please_select_your_fuel">your fuel</string>
+    <string name="welcome">Welcome</string>
+    <string name="next">Next</string>
+    <string name="please_select_your_car">your car</string>
+    <string name="calculate">Calculate</string>
+    <string name="clear">Clear</string>
+    <string name="get_my_location">Get my location</string>
 </resources>

@@ -63,11 +63,11 @@ public class MainActivity extends AppCompatActivity implements AirLocation.Callb
         //Toast.makeText(this, selectedCar + selectedGas, Toast.LENGTH_SHORT).show();
 
 
-// Variables to store the fuel consumption and fuel price
+        // Variables to store the fuel consumption and fuel price
         fuelConsumptionPerKm = 0.0; // Fuel consumption in liters per km
         fuelPricePerLiter = 0.0;    // Fuel price in EGP per liter
 
-// Logic for setting fuel price based on selected gas type
+        // Logic for setting fuel price based on selected gas type
         if (selectedGas != null) {
             switch (selectedGas) {
                 case "80":

@@ -38,8 +38,8 @@ public class StartActivity extends AppCompatActivity {
 
         cars.clear();
         gass.clear();
-        Collections.addAll(cars, "Please, select your car", "Toyota", "BMW", "Hyundai", "Mercedes");
-        Collections.addAll(gass, "Please, select your car's fuel type", "80", "90", "92", "95", "solar", "gas");
+        Collections.addAll(cars, "select", "Toyota", "BMW", "Hyundai", "Mercedes");
+        Collections.addAll(gass, "select", "80", "90", "92", "95", "solar", "gas");
 
         //carList>>adapter>>spinner
         ArrayAdapter carsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cars);
@@ -55,12 +55,12 @@ public class StartActivity extends AppCompatActivity {
         String selectedCar = carSpinner.getSelectedItem().toString();
         String selectedGass = gasSpinner.getSelectedItem().toString();
 
-        if (selectedCar.equalsIgnoreCase("Please, select your car")) {
+        if (selectedCar.equalsIgnoreCase("select")) {
             Toast.makeText(this, "Please choose a car", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (selectedGass.equalsIgnoreCase("Please, select your car's fuel type")) {
+        if (selectedGass.equalsIgnoreCase("select")) {
             Toast.makeText(this, "Please choose a fuel type", Toast.LENGTH_SHORT).show();
             return;
         }
