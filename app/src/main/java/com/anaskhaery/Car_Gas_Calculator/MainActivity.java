@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements AirLocation.Callb
             }
         }
 
-// Logic for setting fuel consumption based on selected car type
+        // Logic for setting fuel consumption based on selected car type
         if (selectedCar != null) {
             switch (selectedCar) {
                 case "Toyota":
@@ -134,6 +135,8 @@ public class MainActivity extends AppCompatActivity implements AirLocation.Callb
                 LinearLayout.LayoutParams.WRAP_CONTENT
         ));
         newEditText.setHint("Enter location");
+        newEditText.setHintTextColor(getColor(R.color.white));
+        newEditText.setTextColor(getColor(R.color.white));
         newEditText.setInputType(android.text.InputType.TYPE_CLASS_TEXT);
 
         newEditText.addTextChangedListener(new TextWatcher() {

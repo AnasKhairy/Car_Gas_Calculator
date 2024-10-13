@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/car_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/car_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Location_App"
         tools:targetApi="31">
@@ -21,16 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".StartActivity"
             android:exported="false">
-
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="false">
-
-
         </activity>
 
         <meta-data
